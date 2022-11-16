@@ -34,6 +34,15 @@ function Reviews() {
           })
      }
 
+     const handleRandom = () => {
+          let randomNumber = Math.floor(Math.random()* data.length);
+          if (randomNumber === index) {
+               randomNumber = index + 1
+          }
+          console.log(randomNumber)
+          setIndex(checkNumber(randomNumber))
+     }
+
 
      return (
           <div className='main'>
@@ -51,7 +60,7 @@ function Reviews() {
                     <button onClick={prevSlide}><FaChevronLeft/></button>
                     <button onClick={nextSlide}><FaChevronRight /></button>
                </div>
-               <button className="random-btn">Random</button>
+               <button className="random-btn" onClick={handleRandom}>Random</button>
           </div>
           </div>
      )
